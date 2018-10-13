@@ -1,0 +1,8 @@
+// specifying ports & specifying constraints: requires -d
+docker run -it -e "PORT=9090" -p 9090:9090 cloud-native-go:1.0.0
+docker run --name constrained-container --cpu-quota 50000 --memory 64m --memory-swappiness 0 -d cloud-native-go:1.0.0
+
+// specifying name
+docker run --name somenameforyourcontainer -d -p 9090:9090 cloud-native-go:1.0.0
+
+docker push username/imagename
